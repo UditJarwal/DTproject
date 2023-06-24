@@ -1,0 +1,69 @@
+API Documentation
+
+Description-
+This API allows users to tag an event and create a nudge for it with a title, image, time, description, icon, and invitation line. The nudges can be minimized and displayed along with the event article.
+
+GET /nudges - Retrieves a list of all nudges. Returns an array of nudge objects.
+
+POST /nudges - Creates a new nudge. Expects a JSON payload in the request body containing the necessary fields.
+
+GET /nudges/{id} - Retrieves a specific nudge by ID. Expects the ID of the nudge in the URL path.
+
+PUT /nudges/{id} - Updates a specific nudge by ID. Expects the ID of the nudge in the URL path and a JSON payload in the request body containing the updated fields.
+
+DELETE /nudges/{id} - Deletes a specific nudge by ID. Expects the ID of the nudge in the URL path.
+
+Object Data Model:-
+{
+  "id": string,
+  "title": string,
+  "image_url": string,
+  "time_to_send": timestamp,
+  "description": string,
+  "icon": string,
+  "invitation": string
+}
+
+Base URL:-
+http://localhost:3000/api/v3/app/
+
+
+API Endpoints:-
+
+GET /nudges - Get a list of all nudges
+POST /nudges - Create a new nudge
+GET /nudges/{id} - Get a specific nudge by ID
+PUT /nudges/{id} - Update a specific nudge by ID
+DELETE /nudges/{id} - Delete a specific nudge by ID
+
+Payload:- 
+
+POST /nudges
+{
+   "title": string,
+   "image_url": string,
+   "time_to_send": timestamp,
+   "description": string,
+   "icon": string,
+   "invitation": string
+}
+
+PUT /nudges/{id}
+{
+   "title": string,
+   "image_url": string,
+   "time_to_send": timestamp,
+   "description": string,
+   "icon": string,
+   "invitation": string
+}
+
+
+CRUD Functionality:-
+CREATE: To create a new nudge, send a POST request to the /nudges endpoint with a JSON payload in the request body containing the necessary fields (title, image_url, time_to_send, description, icon, invitation).
+
+READ: To retrieve a list of all nudges, send a GET request to the /nudges endpoint. To retrieve a specific nudge by ID, send a GET request to the /nudges/{id} endpoint, where {id} is the ID of the nudge you want to retrieve.
+
+UPDATE: To update a specific nudge by ID, send a PUT request to the /nudges/{id} endpoint, where {id} is the ID of the nudge you want to update. Include a JSON payload in the request body containing the updated fields.
+
+DELETE: To delete a specific nudge by ID, send a DELETE request to the /nudges/{id} endpoint, where {id} is the ID of the nudge you want to delete.
